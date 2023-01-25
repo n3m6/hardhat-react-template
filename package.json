@@ -1,0 +1,98 @@
+{
+  "name": "hardhat-react-template",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Abdulla Faraz",
+  "license": "MIT",
+  "scripts": {
+    "compile": "yarn hardhat compile",
+    "test": "yarn test:ci",
+    "test:ci": "yarn hardhat test",
+    "test:coverage": "yarn hardhat coverage",
+    "test:localnode": "yarn hardhat test --network localhost",
+    "dev:localnode": "yarn hardhat node",
+    "dev:testwebapp": "yarn start",
+    "dev:deploylocal": "yarn env-cmd yarn hardhat run scripts/deploy.ts --network localhost ",
+    "dev:deploysepolia": "yarn hardhat run scripts/deploya.ts --network sepolia",
+    "dev:deploygoerli": "yarn env-cmd yarn hardhat run scripts/deploy.ts --network goerli",
+    "dev:deploymainnet": "yarn env-cmd yarn hardhat run scripts/deploy.ts --network mainnet",
+    "start": "react-scripts start",
+    "prettier": "prettier --write 'contracts/**/*.sol'",
+    "lint": "yarn prettier && yarn solhint 'contracts/**/*.sol'",
+    "codeaudit": "slither contracts/Sample.sol --fail-high",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@ethersproject/abi": "5.7.0",
+    "@ethersproject/providers": "5.7.2",
+    "@nomicfoundation/hardhat-chai-matchers": "1.0.5",
+    "@nomicfoundation/hardhat-network-helpers": "1.0.7",
+    "@nomicfoundation/hardhat-toolbox": "2.0.1",
+    "@nomiclabs/hardhat-ethers": "2.2.2",
+    "@nomiclabs/hardhat-etherscan": "3.1.5",
+    "@nomiclabs/hardhat-solhint": "3.0.0",
+    "@typechain/ethers-v5": "10.2.0",
+    "@typechain/hardhat": "6.1.5",
+    "@types/chai": "4.3.4",
+    "@types/mocha": "10.0.1",
+    "@types/node": "18.11.18",
+    "chai": "4.3.7",
+    "env-cmd": "10.1.0",
+    "ethers": "5.7.2",
+    "hardhat": "2.12.6",
+    "hardhat-gas-reporter": "1.0.9",
+    "husky": "8.0.3",
+    "lint-staged": "13.1.0",
+    "local-server": "0.1.8",
+    "prettier": "2.8.3",
+    "prettier-plugin-solidity": "1.1.1",
+    "rimraf": "4.1.2",
+    "solhint": "3.3.8",
+    "solhint-plugin-prettier": "0.0.5",
+    "solidity-coverage": "0.8.2",
+    "ts-node": "10.9.1",
+    "typechain": "8.1.1",
+    "typescript": "4.9.4"
+  },
+  "dependencies": {
+    "@metamask/detect-provider": "2.0.0",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.4.0",
+    "@testing-library/user-event": "14.4.3",
+    "@types/jest": "29.4.0",
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "bignumber.js": "9.1.1",
+    "ganache-cli": "6.12.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-ethersjs": "0.1.14",
+    "react-scripts": "5.0.1",
+    "typescript": "4.9.4",
+    "web-vitals": "3.1.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.{sol}": [
+      "prettier --write",
+      "yarn solhint"
+    ]
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": "please-use-yarn",
+    "yarn": ">=1.22.19"
+  }
+}
