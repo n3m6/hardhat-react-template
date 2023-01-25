@@ -20,6 +20,7 @@
     "prettier": "prettier --write 'contracts/**/*.sol'",
     "lint": "yarn prettier && yarn solhint 'contracts/**/*.sol'",
     "codeaudit": "slither contracts/Sample.sol --fail-medium",
+		"codeaudit:readable": "yarn codeaudit --print human-summary",
     "prepare": "husky install"
   },
   "devDependencies": {
