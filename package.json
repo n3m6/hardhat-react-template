@@ -19,7 +19,7 @@
     "start": "react-scripts start",
     "prettier": "prettier --write 'contracts/**/*.sol'",
     "lint": "yarn prettier && yarn solhint 'contracts/**/*.sol'",
-    "codeaudit": "slither contracts/Sample.sol --fail-high",
+    "codeaudit": "slither contracts/Sample.sol --fail-medium",
     "prepare": "husky install"
   },
   "devDependencies": {
