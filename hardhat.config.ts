@@ -3,6 +3,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-solhint";
 import "solidity-coverage";
+import "hardhat-gas-reporter";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -12,10 +13,10 @@ const config: HardhatUserConfig = {
         enabled: true,
         runs: 1000,
         details: {
-          yul: false
-        }
-      }
-    }
+          yul: false,
+        },
+      },
+    },
   },
   defaultNetwork: "hardhat",
   networks: {
@@ -30,14 +31,14 @@ const config: HardhatUserConfig = {
       chainId: 5,
       gas: 2100000,
       gasPrice: 8000000000,
-      timeout: 60000
+      timeout: 60000,
     },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`,
       accounts: [process.env.ACCOUNT_KEY!!],
       chainId: 1,
     },
-  }
+  },
 };
 
 export default config;
